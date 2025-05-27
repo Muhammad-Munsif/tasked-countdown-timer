@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown Timer with Progress</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-xl text-center">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">Countdown Timer</h1>
+
+    <!-- Date Input -->
+    <div class="mb-6">
+      <label for="dateInput" class="block mb-2 text-sm text-gray-400">Select a future date:</label>
+      <input type="datetime-local" id="dateInput" class="w-full p-2 rounded bg-gray-800 text-white" />
+      <div class="flex flex-wrap justify-center gap-4 mt-4">
+        <button onclick="startCountdown()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">
+          Start
+        </button>
+        <button onclick="resetCountdown()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-white">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <!-- Countdown Display -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+      <div class="bg-gray-800 p-4 rounded-xl shadow">
+        <p id="days" class="text-3xl font-bold">00</p>
+        <span class="text-sm text-gray-400">Days</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow">
+        <p id="hours" class="text-3xl font-bold">00</p>
+        <span class="text-sm text-gray-400">Hours</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow">
+        <p id="minutes" class="text-3xl font-bold">00</p>
+        <span class="text-sm text-gray-400">Minutes</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow">
+        <p id="seconds" class="text-3xl font-bold">00</p>
+        <span class="text-sm text-gray-400">Seconds</span>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="h-4 w-full bg-gray-700 rounded-full overflow-hidden mb-6">
+      <div id="progressBar" class="h-full bg-green-500 transition-all duration-1000 ease-linear w-0"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button onclick="toggleTheme()" class="bg-gray-700 px-4 py-2 rounded text-sm">
+      Toggle Dark / Light Mode
+    </button>
+
+    <!-- Sound -->
+    <audio id="alertSound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
