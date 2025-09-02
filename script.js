@@ -41,7 +41,7 @@ function startCountdown(dateOverride) {
       updateCountdown(0, 0, 0, 0);
       updateProgressBar(100);
       document.getElementById("alertSound").play();
-      alert("🎉 Time's up!");
+      alert("Time's up!");
       return;
     }
 
